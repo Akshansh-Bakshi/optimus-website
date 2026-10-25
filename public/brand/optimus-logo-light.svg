@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" fill="none">
+  <title>Optimus Cooling &amp; Power Solution</title>
+  <path d="M9 62V26L35 10l26 16v36H48V32l-13-8-13 8v30H9Z" fill="#FFFFFF" />
+  <path d="m27 48 10-10 6 6 12-14" stroke="#43B02A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M48 30h8v8" stroke="#43B02A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="80" y="38" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="2.4">OPTIMUS</text>
+  <text x="81" y="56" fill="#D7E2F0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" letter-spacing="1.8">COOLING &amp; POWER SOLUTION</text>
+</svg>
