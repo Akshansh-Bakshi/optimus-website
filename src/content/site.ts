@@ -56,7 +56,11 @@ export const site: SiteConfig = {
     {
       id: "secondary",
       label: "Secondary Office",
-      lines: ["592, 2nd Floor, Amravati Enclave,", "Panchkula – 134105 (India)"],
+      lines: [
+        "Optimus Cooling and Power Solutions",
+        "592, Second Floor, Amravati Enclave",
+        "Panchkula, Haryana – 134107",
+      ],
     },
   ],
 

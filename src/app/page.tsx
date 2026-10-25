@@ -5,7 +5,6 @@ import {
   Headset,
   MapPin,
   PencilRuler,
-  Phone,
 } from "lucide-react";
 import { CoolingSystemExplorer } from "@/components/site/CoolingSystemExplorer";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
@@ -70,8 +69,6 @@ const solutions = [
 ];
 
 export default function Home() {
-  const registeredOffice = site.offices.find((office) => office.id === "registered");
-
   return (
     <>
       <a
@@ -257,36 +254,26 @@ export default function Home() {
                 description="Tell us which service you need and share a few details about the site or requirement. The form marks the information needed to prepare an enquiry."
                 tone="dark"
               />
-              <div className="mt-8 space-y-5 text-sm text-sky-100">
-                {site.phones.slice(0, 1).map((phone) => (
-                  <a
-                    key={phone.tel}
-                    href={`tel:${phone.tel}`}
-                    className="flex w-fit items-center gap-3 rounded-control hover:text-white"
-                  >
-                    <Phone aria-hidden="true" size={18} className="text-green-400" />
-                    <span>{phone.display}</span>
-                  </a>
-                ))}
-                {registeredOffice ? (
-                  <address className="flex items-start gap-3 not-italic">
-                    <MapPin
-                      aria-hidden="true"
-                      size={18}
-                      className="mt-0.5 shrink-0 text-green-400"
-                    />
-                    <span>
-                      <span className="mb-1 block font-semibold text-white">
-                        {registeredOffice.label}
-                      </span>
-                      {registeredOffice.lines.map((line) => (
-                        <span className="block" key={line}>
-                          {line}
+                <div className="mt-8 space-y-5 text-sm text-sky-100">
+                  {site.offices.map((office) => (
+                    <address key={office.id} className="flex items-start gap-3 not-italic">
+                      <MapPin
+                        aria-hidden="true"
+                        size={18}
+                        className="mt-0.5 shrink-0 text-green-400"
+                      />
+                      <span>
+                        <span className="mb-1 block font-semibold text-white">
+                          {office.label}
                         </span>
-                      ))}
-                    </span>
-                  </address>
-                ) : null}
+                        {office.lines.map((line) => (
+                          <span className="block" key={line}>
+                            {line}
+                          </span>
+                        ))}
+                      </span>
+                    </address>
+                  ))}
               </div>
             </div>
             <Card className="border-sky-200 bg-white p-5 sm:p-8">
@@ -320,12 +307,17 @@ export default function Home() {
           </nav>
           <div>
             <h2 className="text-sm font-semibold text-white">Contact</h2>
-            <a
-              href={`tel:${site.phones[0].tel}`}
-              className="mt-3 inline-block text-sm hover:text-white"
-            >
-              {site.phones[0].display}
-            </a>
+              <div className="mt-3 space-y-2 text-sm">
+                {site.phones.map((phone) => (
+                  <a
+                    key={phone.tel}
+                    href={`tel:${phone.tel}`}
+                    className="block hover:text-white"
+                  >
+                    {phone.display}
+                  </a>
+                ))}
+              </div>
           </div>
           <p className="border-t border-white/15 pt-5 text-xs text-sky-200 sm:col-span-2 lg:col-span-3">
             © Optimus Cooling &amp; Power Solution.
